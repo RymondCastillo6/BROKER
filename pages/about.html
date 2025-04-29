@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Acerca de - Pro Invester</title>
-  <link rel="stylesheet" href="../css/main.css" />
-  <script src="../js/theme.js" defer></script>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirar - Broker</title>
   <header>
     <div class="header-container">
-      <img src="logo.png" alt="Logo Pro Invester" class="logo" />
-      
-    </div>
+      <img src="logo.png" alt="Logo Pro Invester" class="logo"/>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lindex.html">Inicio</a></li>
         <li><a href="dashboard.html">Recargar</a></li>
         <li><a href="trade.html">Operar</a></li>
         <li><a href="regulations.html">Regulaciones</a></li>
@@ -23,39 +17,97 @@
       </ul>
     </nav>
   </header>
+<style>
+    nav ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px;
+    }
 
-  <!-- /pages/retirar.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retirar - Broker</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    nav ul li a {
+        text-decoration: none;
+        color: #FFD700;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #ffffff;
+    }
+</style>
+<style>
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .logo {
+        max-width: 150px;
+        height: auto;
+    }
+</style>
+  <style>
+    body {
+      background-color: #000000;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #3e3d3d;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ffd700;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #FFD700;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #FFD700;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #000000;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Retirar Fondos</h2>
-        <form>
-            <input type="number" placeholder="Cantidad a retirar" required>
-            <button type="submit"></button>
-        </form>
-    </div>
-</body>
-</html>
-
-<div class="bank-details">
-    <h3>Detalles Bancarios</h3>
+  <div class="container">
+    <h2>Retirar Fondos</h2>
     <form>
-        <input type="text" placeholder="Entidad Bancaria" required>
-        <input type="text" placeholder="Número de Cuenta Bancaria" required>
-        <button type="submit">Retirar</button>
+      <input type="number" placeholder="Cantidad a retirar" required>
+      <input type="text" placeholder="Entidad bancaria" required>
+      <input type="text" placeholder="Número de cuenta bancaria" required>
+      <button type="submit">Retirar</button>
     </form>
-</div>
-
-  <footer>
-    <p>&copy; 2025 Pro Invester. Todos los derechos reservados.</p>
-  </footer>
+  </div>
 </body>
 </html>
-

@@ -11,11 +11,10 @@
   <header>
     <div class="header-container">
       <img src="logo.png" alt="Logo Pro Invester" class="logo" />
-      
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="lindex.html">Inicio</a></li>
         <li><a href="dashboard.html">Recargar</a></li>
         <li><a href="trade.html">Operar</a></li>
         <li><a href="regulations.html">Regulaciones</a></li>
@@ -27,39 +26,22 @@
   <main>
     <h1>Pasarela de pago</h1>
     <p>Realiza tu primera recarga y empieza a operar.</p>
-  </main>
 
-<!-- Botón de pago -->
-<button id="checkout-button">Recargar con Stripe</button>
-
-<!-- Stripe.js -->
-<script src="https://js.stripe.com/v3/"></script>
-<script src="../js/stripe.js"></script>
-
-<!-- /pages/recargar.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recargar - Broker</title>
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Recargar Fondo</h2>
-        <form>
-            <input type="number" placeholder="Cantidad a recargar" required>
-            <button type="submit">Recargar</button>
-        </form>
+    <div class="payment-form">
+      <form>
+        <input type="number" placeholder="Cantidad a recargar" required>
+        <button type="submit">Recargar</button>
+      </form>
+      <button id="checkout-button">Recargar con Stripe</button>
     </div>
-</body>
-</html>
-
+  </main>
 
   <footer>
     <p>&copy; 2025 Pro Invester. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="../js/stripe.js"></script>
 </body>
 </html>
-
