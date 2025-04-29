@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Operar - Pro Invester</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/chat.js" defer></script>
+  <script src="https://unpkg.com/lightweight-charts@3.4.0/dist/umd/lightweight-charts.standalone.production.js"></script>
+  <script src="../js/tradingview.js" defer></script>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="logo.png" alt="Logo Pro Invester" class="logo"/>
+      
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="dashboard.html">Recargar</a></li>
+        <li><a href="trade.html">Operar</a></li>
+        <li><a href="regulations.html">Regulaciones</a></li>
+        <li><a href="about.html">Retirar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="trade">
+    <h1>Operar en el Mercado</h1>
+    <p>Realiza tus operaciones en tiempo real con precios actualizados.</p>
+
+    <!-- Gráfico TradingView -->
+    <div id="tradingview-chart" style="height: 600px; width: 100%;"></div>
+    
+    <!-- Cuadro de Saldo -->
+    <div class="balance-box">
+        <h3>Saldo Disponible</h3>
+        <p id="balance-amount">$10,000.00</p>
+    </div>
+
+    <script>
+        let balance = 10000;
+
+        function updateBalance(amount) {
+            balance += amount;
+            document.getElementById('balance-amount').textContent = `$${balance.toFixed(2)}`;
+        }
+
+        function buyAsset() {
+            const cost = 100; // Simulated cost for buying
+            if (balance >= cost) {
+                updateBalance(-cost);
+                alert('Compra realizada con éxito.');
+            } else {
+                alert('Saldo insuficiente para realizar la compra.');
+            }
+        }
+
+        function sellAsset() {
+            const profit = 100; // Simulated profit for selling
+            updateBalance(profit);
+            alert('Venta realizada con éxito.');
+        }
+    </script>
+
+    <style>
+        .balance-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #1e1e1e;
+            border: 3px solid #FFD700;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .balance-box h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #FFD700;
+        }
+
+        .balance-box p {
+            margin: 5px 0 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        @media (max-width: 600px) {
+            .balance-box {
+                width: 90%;
+            }
+        }
+    </style>
+
+    <!-- Selector de Activos -->
+    <div class="asset-selector">
+      <label for="asset-select">Selecciona un activo:</label>
+      <select id="asset-select" onchange="updateChart()">
+        <option value="NASDAQ:GOOG">Acción - Google (GOOG)</option>
+        <option value="NASDAQ:AAPL">Acción - Apple (AAPL)</option>
+        <option value="NASDAQ:MSFT">Acción - Microsoft (MSFT)</option>
+        <option value="USDTUSD">Criptomoneda - Tether (USDT)</option>
+        <option value="CRYPTO:BTCUSD">Criptomoneda - Bitcoin (BTC)</option>
+        <option value="INDEX:IXIC">Índice - NASDAQ</option>
+        <option value="INDEX:DAX">Índice - DAX 30</option>
+        <option value="INDEX:HSI">Índice - Hang Seng</option>
+        <option value="INDEX:TSX">Índice - TSX Composite</option>
+        <option value="INDEX:FTSEMIB">Índice - FTSE MIB</option>
+        <option value="INDEX:SMI">Índice - SMI</option>
+        <option value="INDEX:OMXH25">Índice - OMX Helsinki 25</option>
+        <option value="INDEX:OMXHPI">Índice - OMX Helsinki 25</option>
+        <option value="NASDAQ:AMZN">Acción - Amazon (AMZN)</option>
+        <option value="NASDAQ:FB">Acción - Facebook (FB)</option>
+        <option value="NASDAQ:TSLA">Acción - Tesla (TSLA)</option>
+        <option value="NASDAQ:NFLX">Acción - Netflix (NFLX)</option>
+        <option value="NASDAQ:NVDA">Acción - NVIDIA (NVDA)</option>
+        <option value="NASDAQ:INTC">Acción - Intel (INTC)</option>
+        <option value="NASDAQ:AMD">Acción - AMD (AMD)</option>
+        <option value="NASDAQ:CSCO">Acción - Cisco (CSCO)</option>
+        <option value="NASDAQ:QCOM">Acción - Qualcomm (QCOM)</option>
+        <option value="NASDAQ:ADBE">Acción - Adobe (ADBE)</option>
+        <option value="NASDAQ:PYPL">Acción - PayPal (PYPL)</option>
+        <option value="NASDAQ:INTU">Acción - Intuit (INTU)</option>
+        <option value="NASDAQ:ZM">Acción - Zoom (ZM)</option>
+        <option value="NASDAQ:LYFT">Acción - Lyft (LYFT)</option>
+        <option value="NASDAQ:LYFT">Acción - Lyft (LYFT)</option>
+        <option value="NASDAQ:CMCSA">Acción - Comcast (CMCSA)</option>
+        <option value="NASDAQ:TMUS">Acción - T-Mobile (TMUS)</option>
+        <option value="NASDAQ:HON">Acción - Honeywell (HON)</option>
+        <option value="NASDAQ:AMGN">Acción - Amgen (AMGN)</option>
+        <option value="NASDAQ:GILD">Acción - Gilead (GILD)</option>
+        <option value="NASDAQ:MDLZ">Acción - Mondelez (MDLZ)</option>
+        <option value="NASDAQ:PEP">Acción - PepsiCo (PEP)</option>
+        <option value="NASDAQ:WBA">Acción - Walgreens (WBA)</option>
+        <option value="NASDAQ:AMGN">Acción - Amgen (AMGN)</option>
+        <option value="NASDAQ:GILD">Acción - Gilead (GILD)</option>
+        <option value="NASDAQ:VRTX">Acción - Vertex Pharmaceuticals (VRTX)</option>
+        <option value="NASDAQ:REGN">Acción - Regeneron Pharmaceuticals (REGN)</option>
+        <option value="NASDAQ:BIIB">Acción - Biogen (BIIB)</option>
+        <option value="NASDAQ:ILMN">Acción - Illumina (ILMN)</option>
+        <option value="NASDAQ:VRTX">Acción - Vertex Pharmaceuticals (VRTX)</option>
+        <option value="NASDAQ:ALGN">Acción - Align Technology (ALGN)</option>
+        <option value="NASDAQ:IDXX">Acción - IDEXX Laboratories (IDXX)</option>
+        <option value="NASDAQ:CTSH">Acción - Cognizant (CTSH)</option>
+        <option value="NASDAQ:ADSK">Acción - Autodesk (ADSK)</option>
+        <option value="NASDAQ:WDAY">Acción - Workday (WDAY)</option>  
+        <option value="NASDAQ:ADBE">Acción - Adobe (ADBE)</option>
+        <option value="NASDAQ:INTU">Acción - Intuit (INTU)</option>
+        <option value="NASDAQ:SNPS">Acción - Synopsys (SNPS)</option>
+        <option value="COMEX:SI1!">Materia Prima - Plata (Silver)</option>
+        <option value="COMEX:HG1!">Materia Prima - Cobre (Copper)</option>
+        <option value="CRYPTO:ETHUSD">Criptomoneda - Ethereum (ETH)</option>
+        <option value="CRYPTO:LTCUSD">Criptomoneda - Litecoin (LTC)</option>
+        <option value="CRYPTO:DOGEUSD">Criptomoneda - Dogecoin (DOGE)</option>
+        <option value="CRYPTO:XRPUSD">Criptomoneda - Ripple (XRP)</option>
+        <option value="CRYPTO:ADAUSD">Criptomoneda - Cardano (ADA)</option>
+        <option value="CRYPTO:SOLUSD">Criptomoneda - Solana (SOL)</option>
+        <option value="CRYPTO:DOTUSD">Criptomoneda - Polkadot (DOT)</option>
+        <option value="CRYPTO:LINKUSD">Criptomoneda - Chainlink (LINK)</option>
+        <option value="CRYPTO:AVAXUSD">Criptomoneda - Avalanche (AVAX)</option>
+        <option value="CRYPTO:MATICUSD">Criptomoneda - Polygon (MATIC)</option>
+        <option value="CRYPTO:TRXUSD">Criptomoneda - TRON (TRX)</option>
+        <option value="CRYPTO:SHIBUSD">Criptomoneda - Shiba Inu (SHIB)</option>
+        <option value="CRYPTO:BNBUSD">Criptomoneda - Binance Coin (BNB)</option>
+        <option value="CRYPTO:USDCUSD">Criptomoneda - USD Coin (USDC)</option>
+        <option value="CRYPTO:USDTUSD">Criptomoneda - Tether (USDT)</option>
+        <option value="CRYPTO:DAIUSD">Criptomoneda - DAI (DAI)</option>
+        <option value="CRYPTO:WBTCUSD">Criptomoneda - Wrapped Bitcoin (WBTC)</option>
+        <option value="CRYPTO:FTMUSD">Criptomoneda - Fantom (FTM)</option>
+        <option value="CRYPTO:AVAXUSD">Criptomoneda - Avalanche (AVAX)</option>
+      </select>
+    </div>
+
+
+    
+    <!-- Opciones de Compra -->
+    <div class="buy-options">
+      <button onclick="buyAsset()">Comprar</button>
+    <button onclick="sellAsset()">Vender</button>
+    
+    </div>
+  </section>
+
+<!-- Cuadro de Operaciones -->
+<div class="operations-box">
+    <h3>Operaciones Abiertas</h3>
+    <table id="open-operations" border="3" style="width: 100%; text-align: center;">
+        <thead>
+            <tr>
+                <th>Activo</th>
+                <th>Tipo</th>
+                <th>Monto</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Operaciones abiertas se agregarán aquí dinámicamente -->
+        </tbody>
+    </table>
+
+    <h3>Operaciones Cerradas</h3>
+    <table id="closed-operations" border="3" style="width: 100%; text-align: center;">
+        <thead>
+            <tr>
+                <th>Activo</th>
+                <th>Tipo</th>
+                <th>Monto</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Operaciones cerradas se agregarán aquí dinámicamente -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const openOperationsTable = document.getElementById('open-operations').querySelector('tbody');
+    const closedOperationsTable = document.getElementById('closed-operations').querySelector('tbody');
+
+    function addOpenOperation(asset, type, amount) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${asset}</td>
+            <td>${type}</td>
+            <td>$${amount.toFixed(2)}</td>
+            <td>Abierta</td>
+        `;
+        openOperationsTable.appendChild(row);
+    }
+
+    function closeOperation(asset, type, amount, result) {
+        const openRows = openOperationsTable.querySelectorAll('tr');
+        for (let row of openRows) {
+            if (row.cells[0].textContent === asset && row.cells[1].textContent === type) {
+                openOperationsTable.removeChild(row);
+                break;
+            }
+        }
+
+        const closedRow = document.createElement('tr');
+        closedRow.innerHTML = `
+            <td>${asset}</td>
+            <td>${type}</td>
+            <td>$${amount.toFixed(2)}</td>
+            <td>${result}</td>
+        `;
+        closedOperationsTable.appendChild(closedRow);
+    }
+
+    function buyAsset() {
+        const asset = document.getElementById('asset-select').value;
+        const cost = 100; // Simulated cost for buying
+        if (balance >= cost) {
+            updateBalance(-cost);
+            addOpenOperation(asset, 'Compra', cost);
+            alert('Compra realizada con éxito.');
+        } else {
+            alert('Saldo insuficiente para realizar la compra.');
+        }
+    }
+
+    function sellAsset() {
+        const asset = document.getElementById('asset-select').value;
+        const profit = 100; // Simulated profit for selling
+        const openRows = openOperationsTable.querySelectorAll('tr');
+        let found = false;
+
+        for (let row of openRows) {
+            if (row.cells[0].textContent === asset && row.cells[1].textContent === 'Compra') {
+                found = true;
+                updateBalance(profit);
+                closeOperation(asset, 'Compra', profit, 'Ganancia');
+                alert('Venta realizada con éxito.');
+                break;
+            }
+        }
+
+        if (!found) {
+            alert('No hay operaciones abiertas para este activo.');
+        }
+    }
+</script>
+
+<style>
+    .operations-box {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #1e1e1e;
+        border: 1px solid #FFD700;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .operations-box h3 {
+        margin: 10px 0;
+        font-size: 1.2em;
+        color: #FFD700;
+    }
+
+    .operations-box table {
+        margin-top: 10px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .operations-box th, .operations-box td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        color: #fff;
+    }
+
+    .operations-box th {
+        background-color: #333;
+    }
+
+    .operations-box td {
+        background-color: #555;
+    }
+</style>
+
+  <footer>
+    <p>&copy; 2025 Pro Invester. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Chat -->
+  <div id="chat-box" style="display:none; position:fixed; bottom:70px; right:20px; background:#222; color:#fff; padding:10px; width:250px; border-radius:8px;">
+    <h4>Chat Soporte</h4>
+    <div id="chat-window" style="height:100px; overflow-y:auto; background:#333; padding:5px; margin-bottom:5px;"></div>
+    <input type="text" id="chat-input" placeholder="Escribe algo..." style="width: 100%;">
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+  <button onclick="openChat()" style="position:fixed; bottom:20px; right:20px;">💬 Soporte</button>
+</body>
+</html>

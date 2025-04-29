@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="logo" href="images/logo.png" type="image/png">
+  <title>Iniciar Sesión</title>
+  <style>
+    /* Estilo para el cuerpo */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Estilo para el contenedor del formulario */
+    .login-container {
+      background-color: rgb(88, 87, 87);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #FFD700;
+    }
+
+    /* Estilo para los inputs */
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #FFD700;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #000000;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Correo electrónico" required><br>
+      <input type="password" id="password" placeholder="Contraseña" required><br>
+      <button type="submit">Iniciar sesión</button>
+      <p class="error-message" id="errorMessage">Correo o contraseña incorrectos.</p>
+    </form>
+  </div>
+
+  <script>
+    // Asegurarse de que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      // Manejo del evento de inicio de sesión
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // Evitar que el formulario se envíe de la forma convencional
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Aquí puedes poner una validación básica del formulario
+        if (email === "demo@tradepi.com" && password === "Abc12345") {
+          // Si el email y la contraseña coinciden con los valores predefinidos, redirige a trade.html
+          window.location.href = "trade.html";
+        } else {
+          // Si los datos no coinciden, muestra un mensaje de error
+          document.getElementById("errorMessage").style.display = "block";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

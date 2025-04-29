@@ -1,0 +1,359 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #FFD700;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  /* Encabezado */
+  header {
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* Logo centrado */
+  .logo {
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Botón cambiar tema */
+  .theme-toggle {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 auto;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #FFD700;
+    color: #121212;
+  }
+  
+  /* Navegación */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    
+  }
+
+  /* Enlaces siempre dorados */
+a, a:visited, a:active {
+    color: #FFD700;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #121212;
+    background-color: #FFD700;
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+  
+  /* Estilo para el selector de activos */
+  .asset-selector select {
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    font-size: 1rem;
+    appearance: none;
+  }
+  
+  /* Opciones dentro del selector */
+  .asset-selector option {
+    background-color: #1e1e1e;
+    color: #FFD700;
+  }
+  
+  /* Estilo para botones de compra */
+  button, .btn-main {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover, .btn-main:hover {
+    background-color: #FFD700;
+    color: #121212;
+  }
+  
+  /* Estilos para modo claro y oscuro (dinámico con JS) */
+
+/* Enlaces siempre visibles según tema */
+a, a:visited, a:active {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #FFD700;
+    color: #121212;
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+  
+  /* Selector de activos */
+  .asset-selector select {
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    font-size: 1rem;
+    appearance: none;
+    transition: all 0.3s ease;
+  }
+  
+  .asset-selector option {
+    background-color: #1e1e1e;
+    color: #FFD700;
+  }
+  
+  /* Botones */
+  button, .btn-main {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover, .btn-main:hover {
+    background-color: #FFD700;
+    color: #121212;
+  }
+  /* Estilos para modo claro y oscuro (dinámico con JS) */
+
+/* Enlaces siempre visibles según tema */
+a, a:visited, a:active {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #FFD700;
+    color: #121212;
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+  
+  /* Selector de activos */
+  .asset-selector select {
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    font-size: 1rem;
+    appearance: none;
+    transition: all 0.3s ease;
+  }
+  
+  .asset-selector option {
+    background-color: #1e1e1e;
+    color: #FFD700;
+  }
+  
+  /* Botones */
+  button, .btn-main {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover, .btn-main:hover {
+    background-color: #FFD700;
+    color: #121212;
+  }
+/* Estilos para modo claro y oscuro (dinámico con JS) */
+
+/* Enlaces siempre visibles según tema */
+a, a:visited, a:active {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #FFD700;
+    color: #121212;
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+  
+  /* Selector de activos */
+  .asset-selector select {
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    font-size: 1rem;
+    appearance: none;
+    transition: all 0.3s ease;
+  }
+  
+  .asset-selector option {
+    background-color: #1e1e1e;
+    color: #FFD700;
+  }
+  
+  /* Botones */
+  button, .btn-main {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover, .btn-main:hover {
+    background-color: #FFD700;
+    color: #121212;
+  }
+    
+  /* Estilos para modo claro y oscuro (dinámico con JS) */
+
+/* Enlaces siempre visibles según tema */
+a, a:visited, a:active {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #FFD700;
+    color: #121212;
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+  
+  /* Selector de activos */
+  .asset-selector select {
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    font-size: 1rem;
+    appearance: none;
+    transition: all 0.3s ease;
+  }
+  
+  .asset-selector option {
+    background-color: #1e1e1e;
+    color: #FFD700;
+  }
+  
+  /* Botones */
+  button, .btn-main {
+    background-color: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover, .btn-main:hover {
+    background-color: #FFD700;
+    color: #121212;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 5px;
+    width: 300px;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .balance-box {
+    background-color: #1e1e1e;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+  }
+

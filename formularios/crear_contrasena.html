@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Contraseña</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f2f2f2;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input {
+      padding: 8px;
+      width: 250px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #1e7e34;
+    }
+  </style>
+
+  <!-- SDKs de Firebase v9 Compat -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <form onsubmit="handlePassword(event)">
+    <h2>Crear nueva contraseña</h2>
+    <input type="password" id="password" placeholder="Contraseña alfanumérica" required><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <script>
+    // Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyChxVnCIfaS9qkD3oIgwDhu-qGMPdkdzLw",
+      authDomain: "databasepi-ecfbe.firebaseapp.com",
+      projectId: "databasepi-ecfbe",
+      storageBucket: "databasepi-ecfbe.firebasestorage.app",
+      messagingSenderId: "1079868632379",
+      appId: "1:1079868632379:web:4f70a5be3b7ca026e01b1e",
+      measurementId: "G-EM061DTEM5"
+    };
+
+    // Inicializar Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+
+    // Función de manejo del formulario
+    async function handlePassword(event) {
+      event.preventDefault();
+      const password = document.getElementById("password")
+    }
