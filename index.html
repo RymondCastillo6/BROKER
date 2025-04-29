@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="logo" href="images/logo.png" type="image/png">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
   <title>Iniciar Sesión</title>
   <style>
     /* Estilo para el cuerpo */
@@ -66,6 +68,13 @@
     }
   </style>
 </head>
+<script>
+  function toggleMenu() {
+    const navList = document.querySelector('nav ul');
+    navList.classList.toggle('show');
+  }
+</script>
+
 <body>
 
   <div class="login-container">

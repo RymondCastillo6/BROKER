@@ -7,6 +7,8 @@
   <header>
     <div class="header-container">
       <img src="logo.png" alt="Logo Pro Invester" class="logo"/>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
     <nav>
       <ul>
         <li><a href="lindex.html">Inicio</a></li>
@@ -99,6 +101,13 @@
     }
   </style>
 </head>
+<script>
+    function toggleMenu() {
+      const navList = document.querySelector('nav ul');
+      navList.classList.toggle('show');
+    }
+  </script>
+  
 <body>
   <div class="container">
     <h2>Retirar Fondos</h2>

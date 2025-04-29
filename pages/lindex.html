@@ -10,10 +10,19 @@
   <script src="https://unpkg.com/lightweight-charts@3.4.0/dist/umd/lightweight-charts.standalone.production.js"></script>
   <script src="../js/tradingview.js" defer></script>
 </head>
+<script>
+  function toggleMenu() {
+    const navList = document.querySelector('nav ul');
+    navList.classList.toggle('show');
+  }
+</script>
+
 <body>
   <header>
     <div class="header-container">
       <img src="logo.png" alt="Logo Pro Invester" class="logo"/>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
     <nav>
       <ul>
         <li><a href="lindex.html">Inicio</a></li>

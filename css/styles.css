@@ -80,3 +80,31 @@ body {
   text-decoration: underline;
 }
 
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    display: none; /* oculto por defecto */
+  }
+
+  nav ul.show {
+    display: flex; /* se muestra cuando se activa */
+  }
+  
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+  }
+}

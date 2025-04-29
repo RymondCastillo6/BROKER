@@ -12,11 +12,19 @@
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
 </head>
+<script>
+    function toggleMenu() {
+      const navList = document.querySelector('nav ul');
+      navList.classList.toggle('show');
+    }
+  </script>
+  
 <body>
   <header>
     <div class="header-container">
       <img src="logo.png" alt="Logo Pro Invester" class="logo"/>
-      
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
     </div>
     <nav>
       <ul>
